@@ -1,0 +1,14 @@
+1. hay que importar la carpeta "pirata_3" desde Godot ya que es la que tiene el proyecto en si
+
+2. crea una rama en tu local para trabajar tus cambios
+
+
+consideraciones:
+
+la ruta del escenario base que he creado y a partir de la cual trabajar se encuentra en:
+
+res://scenes/game/levels/rooms/scene_4/
+
+
+el video con el que me he guiado es : https://www.youtube.com/watch?v=QeA_N5vK0dY
+
