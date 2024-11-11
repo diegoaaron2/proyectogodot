@@ -13,9 +13,9 @@ extends Node2D
 @onready var _collision := $"../AreaSword/CollisionShape2D" # Colicionador de espada
 @onready var _effect_sword := $"../EffectsSword" # Efectos de espada
 
-var gravity = 650 # Gravedad para el personaje
+var gravity = 500 # Gravedad para el personaje
 var velocity = 100 # Velocidad de movimiento en horizontal
-var jump = 220 # Capacidad de salto, entre mayor el número más se puede saltar
+var jump = 320 # Capacidad de salto, entre mayor el número más se puede saltar
 # Mapa de movimientos del personaje
 var _movements = {
 	IDLE = "default",
@@ -31,7 +31,7 @@ var _movements = {
 }
 var _current_movement = _movements.IDLE # Variable de movimiento
 var _is_jumping = false # Indicamos que el personaje está saltando
-var _max_jumps = 2 # Máximo número de saltos
+var _max_jumps = 5 # Máximo número de saltos
 var _jump_count = 0 # Contador de saltos realizados
 var _died = false # Define si esta vovo o muerto
 var attacking = false # Define si esta atacando

@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://scenes/game/camera/camera.gd" id="1_6v8ac"]
 
 [node name="Camera2D" type="Camera2D"]
-position = Vector2(275, 475)
+position = Vector2(328, 519)
 zoom = Vector2(1.75, 1.75)
 limit_left = -50
 limit_top = -50
-limit_right = 1580
-limit_bottom = 650
+limit_right = 1500
+limit_bottom = 700
 position_smoothing_speed = 2.0
 editor_draw_limits = true
 script = ExtResource("1_6v8ac")
