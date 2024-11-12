@@ -11,7 +11,7 @@ var _move_script: Node2D
 
 
 func _ready():
-	HealthDashboard.add_bomb(2)
+	HealthDashboard.add_bomb(999)
 	_move_script = get_parent().get_node("MainCharacterMovement")
 
 

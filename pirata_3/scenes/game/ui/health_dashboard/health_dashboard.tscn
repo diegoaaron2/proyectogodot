@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bbdmu0jrh4l4o"]
+[gd_scene load_steps=33 format=3 uid="uid://bbdmu0jrh4l4o"]
 
 [ext_resource type="Script" path="res://scenes/game/ui/health_dashboard/health_dashboard.gd" id="1_rufnl"]
 [ext_resource type="Texture2D" uid="uid://cl5b1weh62et3" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/big_bars/1.png" id="2_q6wv6"]
@@ -25,10 +25,6 @@ atlas = SubResource("CompressedTexture2D_iwcxu")
 region = Rect2(104, 44, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qadic"]
-atlas = SubResource("CompressedTexture2D_iwcxu")
-region = Rect2(104, 44, 10, 11)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_25xk4"]
 atlas = SubResource("CompressedTexture2D_iwcxu")
 region = Rect2(104, 44, 10, 11)
 
@@ -169,29 +165,29 @@ texture = SubResource("AtlasTexture_jphx6")
 [node name="Number1" type="TextureRect" parent="LifeBar/Bomb"]
 layout_mode = 0
 offset_left = 110.0
-offset_top = 9.0
+offset_top = 10.0
 offset_right = 150.0
-offset_bottom = 49.0
+offset_bottom = 50.0
 scale = Vector2(0.9, 0.9)
 texture = SubResource("AtlasTexture_nallr")
 
 [node name="Number2" type="TextureRect" parent="LifeBar/Bomb"]
 layout_mode = 0
-offset_left = 152.0
-offset_top = 9.0
-offset_right = 192.0
-offset_bottom = 49.0
+offset_left = 161.0
+offset_top = 10.0
+offset_right = 201.0
+offset_bottom = 50.0
 scale = Vector2(0.9, 0.9)
 texture = SubResource("AtlasTexture_qadic")
 
 [node name="Number3" type="TextureRect" parent="LifeBar/Bomb"]
 layout_mode = 0
-offset_left = 194.0
-offset_top = 9.0
-offset_right = 234.0
-offset_bottom = 49.0
+offset_left = 214.0
+offset_top = 11.0
+offset_right = 254.0
+offset_bottom = 51.0
 scale = Vector2(0.9, 0.9)
-texture = SubResource("AtlasTexture_25xk4")
+texture = SubResource("AtlasTexture_qadic")
 
 [node name="PointGroup" type="Control" parent="."]
 layout_mode = 3

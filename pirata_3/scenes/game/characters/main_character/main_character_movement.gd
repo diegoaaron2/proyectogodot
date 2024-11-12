@@ -13,9 +13,9 @@ extends Node2D
 @onready var _collision := $"../AreaSword/CollisionShape2D" # Colicionador de espada
 @onready var _effect_sword := $"../EffectsSword" # Efectos de espada
 
-var gravity = 500 # Gravedad para el personaje
+var gravity = 250 # Gravedad para el personaje
 var velocity = 100 # Velocidad de movimiento en horizontal
-var jump = 320 # Capacidad de salto, entre mayor el número más se puede saltar
+var jump = 100 # Capacidad de salto, entre mayor el número más se puede saltar
 # Mapa de movimientos del personaje
 var _movements = {
 	IDLE = "default",
@@ -31,7 +31,7 @@ var _movements = {
 }
 var _current_movement = _movements.IDLE # Variable de movimiento
 var _is_jumping = false # Indicamos que el personaje está saltando
-var _max_jumps = 5 # Máximo número de saltos
+#var _max_jumps = 5 # Máximo número de saltos
 var _jump_count = 0 # Contador de saltos realizados
 var _died = false # Define si esta vovo o muerto
 var attacking = false # Define si esta atacando
@@ -73,30 +73,34 @@ func _unhandled_input(event):
 
 # Función de movimiento general del personaje
 func _move(delta):
+	character.velocity.x = 0
+	_current_movement = _movements.IDLE	
 	# Cuando se presiona la tecla (flecha izquierda), movemos el personaje a la izquierda
 	if Input.is_action_pressed("izquierda"):
 		character.velocity.x = -velocity
 		_current_movement = _movements.LEFT_WITH_SWORD	
 		turn_side = "left"
 	# Cuando se presiona la tecla (flecha derecha), movemos el personaje a la derecha
-	elif Input.is_action_pressed("derecha"):
+	if Input.is_action_pressed("derecha"):
 		character.velocity.x = velocity
 		_current_movement = _movements.RIGHT_WITH_SWORD
 		turn_side = "right"
 	# Cuando no presionamos teclas, no hay movimiento	
-	else:
-		character.velocity.x = 0
-		_current_movement = _movements.IDLE	
+	if Input.is_action_pressed("arriba"):
+		_current_movement = _movements.JUMP_WITH_SWORD
+
+		
+	
 	
 	# Cuando se presiona la tecla (espacio), hacemos animación de salto
-	if Input.is_action_just_pressed("saltar"):
-		if character.is_on_floor():
-			_current_movement = _movements.JUMP_WITH_SWORD
-			_is_jumping = true
-			_jump_count += 1 # Sumamos el primer salto
-		elif _is_jumping and _jump_count < _max_jumps:
-			_current_movement = _movements.JUMP_WITH_SWORD
-			_jump_count += 1 # Sumamos el segundo salto
+	#if Input.is_action_just_pressed("saltar"):
+		#if character.is_on_floor():
+			#_current_movement = _movements.JUMP_WITH_SWORD
+			#_is_jumping = true
+			#_jump_count += 1 # Sumamos el primer salto
+		#elif _is_jumping and _jump_count < _max_jumps:
+			#_current_movement = _movements.JUMP_WITH_SWORD
+			#_jump_count += 1 # Sumamos el segundo salto
 
 	_apply_gravity(delta)
 	

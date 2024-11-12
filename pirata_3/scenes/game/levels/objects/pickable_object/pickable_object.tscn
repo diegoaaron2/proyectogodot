@@ -158,12 +158,14 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p0cjw"]
-radius = 7.0
+radius = 9.05539
 
 [node name="PickableObject" type="Area2D"]
 script = SubResource("GDScript_5io65")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -1)
+scale = Vector2(1.6875, 1.375)
 sprite_frames = SubResource("SpriteFrames_2ebd0")
 animation = &"idle"
 

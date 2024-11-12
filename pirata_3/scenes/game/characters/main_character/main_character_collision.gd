@@ -22,3 +22,6 @@ func _process(_delta):
 		# Validamos si existe el metodo hit
 		if collider and collider.has_method("hit"):
 			collider.hit()
+			
+
+
