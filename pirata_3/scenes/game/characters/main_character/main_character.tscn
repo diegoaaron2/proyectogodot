@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://ca3ueo0yewjov"]
+[gd_scene load_steps=76 format=3 uid="uid://ca3ueo0yewjov"]
 
 [ext_resource type="Texture2D" uid="uid://xd70a23vyklm" path="res://assets/sprites/treasure_hunters/captain_clown_nose/sprites/captain_clown_nose/captain_clown_nose_with_sword/15_attack_1/attack_1_01.png" id="2_082ap"]
 [ext_resource type="Texture2D" uid="uid://dxflqrst5dy31" path="res://assets/sprites/treasure_hunters/captain_clown_nose/sprites/captain_clown_nose/captain_clown_nose_without_sword/01-idle/idle_01.png" id="2_dghf6"]
@@ -68,6 +68,8 @@
 [ext_resource type="Texture2D" uid="uid://cxctf3c5kurwl" path="res://assets/sprites/treasure_hunters/captain_clown_nose/sprites/dust_particles/run_04.png" id="55_qndtn"]
 [ext_resource type="Texture2D" uid="uid://dfilactnw23ej" path="res://assets/sprites/treasure_hunters/captain_clown_nose/sprites/dust_particles/run_05.png" id="56_e847i"]
 [ext_resource type="Script" path="res://scenes/game/characters/main_character/main_character_collision.gd" id="57_7h47x"]
+[ext_resource type="Script" path="res://scenes/game/characters/main_character/AreaSword.gd" id="69_ticao"]
+[ext_resource type="Script" path="res://scenes/game/characters/main_character/CollisionShape2D.gd" id="70_xpql0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sohxe"]
 animations = [{
@@ -415,15 +417,19 @@ frame = 3
 frame_progress = 1.0
 
 [node name="AreaSword" type="Area2D" parent="." groups=["hit"]]
+position = Vector2(19, 0)
+script = ExtResource("69_ticao")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaSword"]
-position = Vector2(21.5, 6)
+position = Vector2(-1, -1)
 shape = SubResource("RectangleShape2D_841yf")
 disabled = true
+script = ExtResource("70_xpql0")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 bus = &"Effects"
 
 [connection signal="animation_finished" from="Animation" to="MainCharacterMovement" method="_on_animation_animation_finished"]
 [connection signal="frame_changed" from="Animation" to="MainCharacterMovement" method="_on_animation_frame_changed"]
+[connection signal="body_entered" from="AreaSword" to="AreaSword" method="_on_body_entered"]
 [connection signal="finished" from="AudioStreamPlayer2D" to="MainCharacterMovement" method="_on_audio_stream_player_2d_finished"]
