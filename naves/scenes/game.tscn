@@ -47,14 +47,14 @@ visible = false
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(0, 960)
+motion_mirroring = Vector2(1024, 0)
 
 [node name="PurpleStars" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
 texture = ExtResource("6_il5hm")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 540, 960)
+region_rect = Rect2(0, 0, 1024, 540)
 
 [node name="StarParticleEffect" type="GPUParticles2D" parent="."]
 position = Vector2(270, -50)
@@ -74,7 +74,7 @@ scale = Vector2(0.7, 0.7)
 collision_mask = 2
 
 [node name="PlayerSpawnPos" type="Marker2D" parent="."]
-position = Vector2(270, 850)
+position = Vector2(84, 265)
 
 [node name="LaserContainer" type="Node2D" parent="."]
 

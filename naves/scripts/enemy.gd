@@ -8,7 +8,7 @@ signal hit
 @export var points = 100
 
 func _physics_process(delta):
-	global_position.y += speed * delta
+	global_position.x -= speed * delta
 
 func die():
 	queue_free()
