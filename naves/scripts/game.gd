@@ -54,11 +54,10 @@ func _process(delta):
 	elif timer.wait_time < 0.5:
 		timer.wait_time = 0.5
 	
-	pb.scroll_offset.y += delta * scroll_speed
+	pb.scroll_offset.x -= delta * scroll_speed
 	
-	if pb.scroll_offset.y >= 960:
-		pb.scroll_offset.y = 0
-	print(pb.scroll_offset.y)
+	if pb.scroll_offset.x >= 1024:
+		pb.scroll_offset.x = 0
 
 func _on_player_laser_shot(laser_scene, location):
 	var laser = laser_scene.instantiate()
@@ -68,7 +67,7 @@ func _on_player_laser_shot(laser_scene, location):
 
 func _on_enemy_spawn_timer_timeout():
 	var e = enemy_scenes.pick_random().instantiate()
-	e.global_position = Vector2(randf_range(50,500), 50)
+	e.global_position = Vector2(1020,randf_range(50,500))
 	e.killed.connect(_on_enemy_killed)
 	e.hit.connect(_on_enemy_hit)
 	enemy_container.add_child(e)
