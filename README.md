@@ -21,4 +21,8 @@ Se desarrollo un nuevo nivel en el cual el pirata puede romper las paredes para 
 Se desarrollo un plataformero 2d en el cual un condor debe ganar puntos destruyendo a 2 tipos de enemigos (cazador y carroñero) y acumulando puntos para superar el puntaje máximo.
 
 
+#### Teclas utilizadas en el proyecto final
+
+![teclas_control](teclas.png)
+
 
