@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://duykhyqmgb830"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_3nmos"]
+[ext_resource type="Texture2D" uid="uid://by0k8dpdlye2k" path="res://assets/textures/condor_23.png" id="2_623vi"]
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+motion_mode = 1
+script = ExtResource("1_3nmos")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_623vi")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+rotation = 1.5708
+polygon = PackedVector2Array(55.9999, -23.0002, 53, -8.00019, 56, 9.9998, 58.0001, 26.9998, 52.0001, 37.9998, 40.0001, 38.9999, 40.0001, 18.9999, 2.00011, 30, -48.9998, 47.0002, -61.9999, 15.0002, -39, 7.00014, 14, -13.0001, 13.9999, -30.0001, -3.00014, -40, 13.9998, -53, 30.9999, -32.0001, 42.9998, -50.0002)
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(42, 42)

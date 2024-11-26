@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb8h1b62e4pjv"]
+
+[ext_resource type="PackedScene" uid="uid://ddpjpp1n8roni" path="res://scenes/enemy.tscn" id="1_81cvk"]
+[ext_resource type="Texture2D" uid="uid://rhig2f5qbnfv" path="res://assets/textures/cazador_1c.png" id="2_7ucsf"]
+
+[node name="DiverEnemy" instance=ExtResource("1_81cvk")]
+speed = 400
+hp = 1
+points = 200
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_7ucsf")
