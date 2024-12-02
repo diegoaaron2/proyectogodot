@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://xjhr3uyy7j7l"]
+[gd_scene load_steps=15 format=3 uid="uid://xjhr3uyy7j7l"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_24yq5"]
 [ext_resource type="PackedScene" uid="uid://duykhyqmgb830" path="res://scenes/player.tscn" id="2_1widd"]
@@ -11,7 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://crqcnegtp5p23" path="res://scenes/game_over_screen.tscn" id="5_qjdpl"]
 [ext_resource type="AudioStream" uid="uid://b1wymalc4ru36" path="res://assets/audio/explode.wav" id="6_d50o4"]
 [ext_resource type="Texture2D" uid="uid://dfgo50t0a2vci" path="res://assets/textures/star.png" id="7_altly"]
-[ext_resource type="Texture2D" uid="uid://dce2mhtx85oee" path="res://assets/textures/montanas3.png" id="9_xtceo"]
+[ext_resource type="Texture2D" uid="uid://cqt2mqomht3y3" path="res://assets/textures/fondo_base01.png" id="9_q0tyg"]
+[ext_resource type="Texture2D" uid="uid://dbpnimjbirffp" path="res://assets/textures/Layers/cloud_lonely.png" id="10_witcw"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2jboo"]
 particle_flag_disable_z = true
@@ -51,14 +52,38 @@ visible = false
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(1024, 0)
+motion_mirroring = Vector2(1020, 0)
 
 [node name="PurpleStars" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
-texture = ExtResource("9_xtceo")
+texture = ExtResource("9_q0tyg")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 1024, 540)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(1020, 0)
+
+[node name="Polygon2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(835, 122)
+texture = ExtResource("10_witcw")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(1020, 0)
+
+[node name="Polygon2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(494, 204)
+texture = ExtResource("10_witcw")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(1020, 0)
+
+[node name="Polygon2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(130, 163)
+texture = ExtResource("10_witcw")
 
 [node name="StarParticleEffect" type="GPUParticles2D" parent="."]
 position = Vector2(512, -50)
